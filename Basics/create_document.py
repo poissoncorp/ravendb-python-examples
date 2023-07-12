@@ -1,4 +1,4 @@
-import database
+from database import DocumentStoreHolder
 from models import Company, Contact
 
 
@@ -20,10 +20,9 @@ def run(run_params: RunParams) -> str:
     # region Step_1
     new_company = Company(Name=company_name, Phone=company_phone, Contact=Contact(contact_name, contact_title))
     # endregion
-    urls = ["http://127.0.0.1:8080"]
-    store = database.DocumentStoreHolder.document_store(urls)
+    store = DocumentStoreHolder.document_store()
 
-    with store.open_session(database="Demo") as session:
+    with store.open_session() as session:
         # region Step_2
         session.store(new_company)
         # endregion

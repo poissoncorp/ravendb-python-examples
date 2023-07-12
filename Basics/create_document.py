@@ -25,7 +25,7 @@ class CreateDocument(DemoExample):
         new_company = Company(Name=company_name, Phone=company_phone, Contact=Contact(contact_name, contact_title))
         # endregion
 
-        with DocumentStoreHolder.document_store().open_session() as session:
+        with DocumentStoreHolder.store().open_session() as session:
             # region Step_2
             session.store(new_company)
             # endregion

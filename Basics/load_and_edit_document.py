@@ -12,7 +12,7 @@ class LoadAndEditDocument(DemoExample):
         company_name = run_params.company_name
 
         # region Demo
-        with self.document_store_holder.document_store().open_session() as session:
+        with self.document_store_holder.store().open_session() as session:
             # region Step_1
             company = session.load("companies/5-A", Company)
             # endregion

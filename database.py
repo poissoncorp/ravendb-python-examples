@@ -9,7 +9,7 @@ class DocumentStoreHolder:
     __document_store: Optional[DocumentStore] = None
 
     @classmethod
-    def document_store(cls) -> DocumentStore:
+    def store(cls) -> DocumentStore:
         if cls.__document_store is None:
             cls.__document_store = DocumentStore(cls.__urls, cls.__database_name)
             cls.__document_store.initialize()

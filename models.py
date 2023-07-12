@@ -116,3 +116,24 @@ class Shipper:
     Id: Optional[str] = None
     Name: Optional[str] = None
     Phone: Optional[str] = None
+
+
+@dataclass
+class Supplier:
+    Id: Optional[str] = None
+    Contact: Optional[Contact] = None
+    Name: Optional[str] = None
+    Address: Optional[Address] = None
+    Phone: Optional[str] = None
+    Fax: Optional[str] = None
+    HomePage: Optional[str] = None
+
+
+@dataclass
+class LastFm:
+    Id: Optional[str] = None
+    Artist: Optional[str] = None
+    TrackId: Optional[str] = None
+    Title: Optional[str] = None
+    TimeStamp: Optional[datetime.datetime] = None
+    Tags: Optional[List[str]] = None

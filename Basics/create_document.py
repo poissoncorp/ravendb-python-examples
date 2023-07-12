@@ -1,0 +1,40 @@
+import database
+from models import Company, Contact
+
+
+class RunParams:
+    def __init__(self, company_name: str = None, company_phone: str = None, contact_name: str = None, contact_title: str= None):
+        self.company_name = company_name
+        self.company_phone = company_phone
+        self.contact_name = contact_name
+        self.contact_title = contact_title
+
+
+def run(run_params: RunParams) -> str:
+    company_name = run_params.company_name or "Hibernating Rhinos"
+    company_phone = run_params.company_phone or "(+972)52-5486969"
+    contact_name = run_params.contact_name or "New Contact Name"
+    contact_title = run_params.contact_title or "New Contact Title"
+
+    # region Demo
+    # region Step_1
+    new_company = Company(Name=company_name, Phone=company_phone, Contact=Contact(contact_name, contact_title))
+    # endregion
+    urls = ["http://127.0.0.1:8080"]
+    store = database.DocumentStoreHolder.document_store(urls)
+
+    with store.open_session(database="Demo") as session:
+        # region Step_2
+        session.store(new_company)
+        # endregion
+
+        # region Step_3
+        the_new_document_id = new_company.Id
+        # endregion
+
+        # region Step_4
+        session.save_changes()
+        # endregion
+    # endregion
+
+    return the_new_document_id

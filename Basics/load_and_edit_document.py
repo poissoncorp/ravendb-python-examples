@@ -25,4 +25,3 @@ class LoadAndEditDocument(DemoExample):
             session.save_changes()
             # endregion
         # endregion
-

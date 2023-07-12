@@ -1,5 +1,6 @@
 # region Usings
 from ravendb import DocumentStore
+
 # endregion
 
 
@@ -35,5 +36,8 @@ class DocumentStoreHolder:
             cls._store = cls._create_document_store()
 
         return cls._store
+
     # endregion
+
+
 # endregion

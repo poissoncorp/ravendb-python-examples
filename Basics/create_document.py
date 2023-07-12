@@ -4,11 +4,14 @@ from demo_example import DemoExample, RunParamsBase
 
 
 class RunParams(RunParamsBase):
-    def __init__(self, company_name: str = None, company_phone: str = None, contact_name: str = None, contact_title: str= None):
+    def __init__(
+        self, company_name: str = None, company_phone: str = None, contact_name: str = None, contact_title: str = None
+    ):
         self.company_name = company_name
         self.company_phone = company_phone
         self.contact_name = contact_name
         self.contact_title = contact_title
+
 
 class CreateDocument(DemoExample):
     def run(self, run_params: RunParams) -> str:

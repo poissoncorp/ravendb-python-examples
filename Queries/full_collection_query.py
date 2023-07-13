@@ -1,10 +1,10 @@
 from typing import List
 
-from demo_example import DemoExample
+from demo_example import Example
 from models import Company
 
 
-class FullCollectionQuery(DemoExample):
+class FullCollectionQuery(Example):
     def run(self, run_params=None) -> List[Company]:
         # region Demo
         with self.document_store_holder.store().open_session() as session:

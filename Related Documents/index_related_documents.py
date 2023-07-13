@@ -2,7 +2,7 @@
 from ravendb import AbstractIndexCreationTask
 
 # endregion
-from demo_example import DemoExample, RunParamsBase
+from demo_example import Example, RunParamsBase
 from models import Product
 from typing import List
 
@@ -12,7 +12,7 @@ class RunParams(RunParamsBase):
         self.category_name = category_name
 
 
-class IndexRelatedDocuments(DemoExample):
+class IndexRelatedDocuments(Example):
     # region Demo
     # region Step_1
     class Products_ByCategoryName(AbstractIndexCreationTask):

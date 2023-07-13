@@ -8,7 +8,7 @@ class RunParamsBase(abc.ABC):
     pass
 
 
-class DemoExample(abc.ABC):
+class Example(abc.ABC):
     def __init__(self):
         self.document_store_holder = DocumentStoreHolder()
 

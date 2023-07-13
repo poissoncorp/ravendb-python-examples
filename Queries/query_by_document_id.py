@@ -1,4 +1,4 @@
-from demo_example import DemoExample, RunParamsBase
+from demo_example import Example, RunParamsBase
 from models import Employee
 
 
@@ -7,7 +7,7 @@ class RunParams(RunParamsBase):
         self.employee_document_id = employee_document_id
 
 
-class QueryByDocumentId(DemoExample):
+class QueryByDocumentId(Example):
     def run(self, run_params: RunParams) -> Employee:
         employee_document_id = run_params.employee_document_id
         # region Demo

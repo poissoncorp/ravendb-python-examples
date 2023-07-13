@@ -2,7 +2,7 @@
 from copy import deepcopy
 
 # endregion
-from demo_example import RunParamsBase, DemoExample
+from demo_example import RunParamsBase, Example
 
 
 class RunParams(RunParamsBase):
@@ -11,7 +11,7 @@ class RunParams(RunParamsBase):
         self.attachment_name = attachment_name
 
 
-class LoadAttachment(DemoExample):
+class LoadAttachment(Example):
     _DEFAULT_DOCUMENT_ID = "categories/1-A"
 
     def run(self, run_params: RunParams) -> None:

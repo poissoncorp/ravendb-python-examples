@@ -1,6 +1,6 @@
 from database import DocumentStoreHolder
 from models import Company, Contact
-from demo_example import DemoExample, RunParamsBase
+from demo_example import Example, RunParamsBase
 
 
 class RunParams(RunParamsBase):
@@ -13,7 +13,7 @@ class RunParams(RunParamsBase):
         self.contact_title = contact_title
 
 
-class CreateDocument(DemoExample):
+class CreateDocument(Example):
     def run(self, run_params: RunParams) -> str:
         company_name = run_params.company_name or "Hibernating Rhinos"
         company_phone = run_params.company_phone or "(+972)52-5486969"

@@ -1,6 +1,6 @@
 from typing import List
 
-from demo_example import RunParamsBase, DemoExample
+from demo_example import RunParamsBase, Example
 
 # region Usings
 from ravendb import AbstractIndexCreationTask
@@ -14,7 +14,7 @@ class RunParams(RunParamsBase):
         self.attachment_min_size = attachment_min_size
 
 
-class IndexAttachmentDetails(DemoExample):
+class IndexAttachmentDetails(Example):
     # region Demo
     # region Step_1
     class Employees_ByAttachmentDetails(AbstractIndexCreationTask):

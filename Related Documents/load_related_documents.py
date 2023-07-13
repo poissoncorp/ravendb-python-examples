@@ -1,4 +1,4 @@
-from demo_example import DemoExample, RunParamsBase
+from demo_example import Example, RunParamsBase
 from models import Product, Supplier
 
 
@@ -8,7 +8,7 @@ class RunParams(RunParamsBase):
         self.phone = phone
 
 
-class IndexRelatedDocuments(DemoExample):
+class IndexRelatedDocuments(Example):
     def run(self, run_params: RunParams) -> None:
         price_per_unit = run_params.price_per_unit
         phone = run_params.phone

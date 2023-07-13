@@ -1,4 +1,4 @@
-from demo_example import RunParamsBase, DemoExample
+from demo_example import RunParamsBase, Example
 from models import Supplier, Category, Product
 
 
@@ -9,7 +9,7 @@ class RunParams(RunParamsBase):
         self.product_name = product_name
 
 
-class CreateRelatedDocuments(DemoExample):
+class CreateRelatedDocuments(Example):
     def run(self, run_params: RunParams) -> Product:
         supplier_name = run_params.supplier_name
         supplier_phone = run_params.supplier_phone

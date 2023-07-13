@@ -2,11 +2,11 @@ from typing import Optional, List
 
 from ravendb import QueryStatistics
 
-from demo_example import DemoExample
+from demo_example import Example
 from models import Employee
 
 
-class QueryExample(DemoExample):
+class QueryExample(Example):
     def run(self, run_params=None) -> List[Employee]:
         # region Demo
         with self.document_store_holder.store().open_session() as session:

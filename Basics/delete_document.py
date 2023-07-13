@@ -1,4 +1,4 @@
-from demo_example import DemoExample, RunParamsBase
+from demo_example import Example, RunParamsBase
 
 
 class RunParams(RunParamsBase):
@@ -6,7 +6,7 @@ class RunParams(RunParamsBase):
         self.document_id = document_id
 
 
-class DeleteDocument(DemoExample):
+class DeleteDocument(Example):
     def run(self, run_params: RunParams) -> None:
         document_id = run_params.document_id
 

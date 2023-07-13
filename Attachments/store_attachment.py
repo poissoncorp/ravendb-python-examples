@@ -1,4 +1,4 @@
-from demo_example import DemoExample, RunParamsBase
+from demo_example import Example, RunParamsBase
 
 
 class RunParams(RunParamsBase):
@@ -9,7 +9,7 @@ class RunParams(RunParamsBase):
         self.content_type = content_type
 
 
-class StoreAttachment(DemoExample):
+class StoreAttachment(Example):
     _DEFAULT_DOCUMENT_ID = "companies/2-A"
 
     def run(self, run_params: RunParams) -> None:

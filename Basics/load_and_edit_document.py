@@ -1,4 +1,4 @@
-from demo_example import DemoExample, RunParamsBase
+from demo_example import Example, RunParamsBase
 from models import Company
 
 
@@ -7,7 +7,7 @@ class RunParams(RunParamsBase):
         self.company_name = company_name
 
 
-class LoadAndEditDocument(DemoExample):
+class LoadAndEditDocument(Example):
     def run(self, run_params: RunParams) -> None:
         company_name = run_params.company_name
 

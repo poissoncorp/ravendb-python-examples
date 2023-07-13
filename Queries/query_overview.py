@@ -1,8 +1,8 @@
-from demo_example import DemoExample, RunParamsBase
+from demo_example import Example, RunParamsBase
 from models import Employee
 
 
-class QueryOverview(DemoExample):
+class QueryOverview(Example):
     def run(self, run_params: RunParamsBase = None) -> None:
         # region Demo
         with self.document_store_holder.store().open_session() as session:

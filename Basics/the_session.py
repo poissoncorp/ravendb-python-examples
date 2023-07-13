@@ -1,5 +1,5 @@
 from Basics.the_document_store import DocumentStoreHolder
-from demo_example import DemoExample, RunParamsBase
+from demo_example import Example, RunParamsBase
 
 # region Usings
 from ravendb import DocumentSession
@@ -7,7 +7,7 @@ from ravendb import DocumentSession
 # endregion
 
 
-class TheSession(DemoExample):
+class TheSession(Example):
     def run(self, run_params: RunParamsBase = None):
         # region Demo
         # region Step_1

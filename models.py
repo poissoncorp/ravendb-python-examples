@@ -76,7 +76,7 @@ class Product:
     QuantityPerUnit: Optional[str] = None
     PricePerUnit: Optional[str] = None
     UnitsInStock: Optional[str] = None
-    UnitsInOrder: Optional[str] = None
+    UnitsOnOrder: Optional[str] = None
     Discontinued: Optional[bool] = None
     ReorderLevel: Optional[int] = None
 

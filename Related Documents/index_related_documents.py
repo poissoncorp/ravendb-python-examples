@@ -1,11 +1,10 @@
 # region Usings
-from typing import List
-
 from ravendb import AbstractIndexCreationTask
 
 # endregion
 from demo_example import DemoExample, RunParamsBase
 from models import Product
+from typing import List
 
 
 class RunParams(RunParamsBase):
@@ -32,7 +31,7 @@ class IndexRelatedDocuments(DemoExample):
 
     # endregion
 
-    def run(self, run_params: RunParams):
+    def run(self, run_params: RunParams) -> List[Product]:
         category_name = run_params.category_name
 
         # region Demo
@@ -48,4 +47,3 @@ class IndexRelatedDocuments(DemoExample):
             # endregion
         # endregion
         return products_with_category_name
-

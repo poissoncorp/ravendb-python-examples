@@ -3,7 +3,7 @@ from models import Order, Product
 
 
 class QueryRelatedDocuments(DemoExample):
-    def run(self, run_params: RunParamsBase = None):
+    def run(self, run_params: RunParamsBase = None) -> None:
         # region Demo
         with self.document_store_holder.store().open_session() as session:
             # region Step_1
@@ -15,7 +15,7 @@ class QueryRelatedDocuments(DemoExample):
             # region Step_2
             for shipped_order in shipped_orders:
                 product_ids = [x.Product for x in shipped_order.Lines]
-            # endregion
+                # endregion
 
                 for i in range(len(product_ids)):
                     # region Step_3

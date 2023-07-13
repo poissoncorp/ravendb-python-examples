@@ -10,7 +10,7 @@ class RunParams(RunParamsBase):
 
 
 class CreateRelatedDocuments(DemoExample):
-    def run(self, run_params: RunParams):
+    def run(self, run_params: RunParams) -> Product:
         supplier_name = run_params.supplier_name
         supplier_phone = run_params.supplier_phone
         product_name = run_params.product_name

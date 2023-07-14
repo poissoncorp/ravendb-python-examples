@@ -60,7 +60,7 @@ class ProjectIndexResults(Example):
                     (
                         "{ first_name: employee.FirstName,"
                         " phone: employee.HomePhone,"
-                        " location: employee.Address.City + ' ' + employee.Address.Country"
+                        " location: employee.Address.City + ' ' + employee.Address.Country }"
                     ),
                 ),
             )

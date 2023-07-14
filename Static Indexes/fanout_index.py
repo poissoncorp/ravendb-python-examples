@@ -30,8 +30,8 @@ class Orders_ByProductDetails(AbstractIndexCreationTask):
         super().__init__()
         self.map = (
             "docs.Orders.SelectMany(order => order.Lines, (order, orderLine) => new {"
-            "    ProductId = orderLine.Product,"
-            "    ProductName = orderLine.ProductName"
+            "    product_id = orderLine.Product,"
+            "    product_name = orderLine.ProductName"
             "})"
         )
 
@@ -48,7 +48,7 @@ class FanoutIndex(Example):
         # region Step_4
         with self.document_store_holder.store().open_session() as session:
             orders = list(
-                session.query_index_type(Orders_ByProductDetails, Order).where_starts_with("ProductName", name_prefix)
+                session.query_index_type(Orders_ByProductDetails, Order).where_starts_with("product_name", name_prefix)
             )
         # endregion
         # endregion

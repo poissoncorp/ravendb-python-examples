@@ -1,6 +1,7 @@
 # region Usings
 from ravendb import CreateDatabaseOperation
 from ravendb.serverwide.database_record import DatabaseRecord
+
 # endregion
 
 from database import DocumentStoreHolder
@@ -8,7 +9,7 @@ from demo_example import Example
 
 
 class CreateDatabase(Example):
-    def run(self, run_params = None):
+    def run(self, run_params=None):
         database_name = "someDb"
 
         # region Demo
@@ -26,6 +27,3 @@ class CreateDatabase(Example):
             # Database already exists
             pass
         # endregion
-
-
-

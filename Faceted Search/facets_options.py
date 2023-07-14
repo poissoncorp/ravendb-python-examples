@@ -1,5 +1,8 @@
+# region Usings
 from ravendb import AbstractIndexCreationTask, Facet
 from ravendb.documents.queries.facets.misc import FacetOptions, FacetTermSortMode
+
+# endregion
 
 from demo_example import Example, RunParamsBase
 from models import Product

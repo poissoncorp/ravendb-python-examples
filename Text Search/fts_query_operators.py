@@ -1,5 +1,6 @@
 # region Usings
 from ravendb import SearchOperator
+
 # endregion
 from demo_example import Example, RunParamsBase
 from models import Employee

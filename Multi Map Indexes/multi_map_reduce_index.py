@@ -1,5 +1,7 @@
+# region Usings
 from ravendb.documents.indexes.index_creation import AbstractMultiMapIndexCreationTask
 
+# endregion
 from demo_example import Example, RunParamsBase
 
 

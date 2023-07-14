@@ -42,30 +42,30 @@ class Contacts_ByNameAndTitle(AbstractMultiMapIndexCreationTask):
         self._add_map(
             (
                 "docs.Employees.Select(employee => new {"
-                + '    contact_name = (employee.FirstName + " ") + employee.LastName,'
-                + "    contact_title = employee.Title,"
-                + '    collection = this.MetadataFor(employee)["@collection"]'
-                + "})"
+                '    contact_name = (employee.FirstName + " ") + employee.LastName,'
+                "    contact_title = employee.Title,"
+                '    collection = this.MetadataFor(employee)["@collection"]'
+                "})"
             )
         )
 
         self._add_map(
             (
                 "docs.Companies.Select(company => new {"
-                + "    contact_name = company.Contact.Name,"
-                + "    contact_title = company.Contact.Title,"
-                + '    collection = this.MetadataFor(company)["@collection"]'
-                + "})"
+                "    contact_name = company.Contact.Name,"
+                "    contact_title = company.Contact.Title,"
+                '    collection = this.MetadataFor(company)["@collection"]'
+                "})"
             )
         )
 
         self._add_map(
             (
                 "docs.Suppliers.Select(supplier => new {"
-                + "    contact_name = supplier.Contact.Name,"
-                + "    contact_title = supplier.Contact.Title,"
-                + '    collection = this.MetadataFor(supplier)["@collection"]'
-                + "})"
+                "    contact_name = supplier.Contact.Name,"
+                "    contact_title = supplier.Contact.Title,"
+                '    collection = this.MetadataFor(supplier)["@collection"]'
+                "})"
             )
         )
         # endregion

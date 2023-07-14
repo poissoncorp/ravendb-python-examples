@@ -5,7 +5,7 @@ from ravendb.documents.indexes.definitions import FieldIndexing
 # endregion
 
 from demo_example import Example, RunParamsBase
-from models import Category
+from models import LastFm
 
 
 class RunParams(RunParamsBase):
@@ -15,32 +15,40 @@ class RunParams(RunParamsBase):
 
 # region Demo
 # region Step_1
-class Categories_DescriptionText(AbstractIndexCreationTask):
+class Song_TextData(AbstractIndexCreationTask):
     # endregion
     def __init__(self):
         # region Step_2
         super().__init__()
-        self.map = "docs.Categories.Select(category => new { " "    CategoryDescription = category.Description " "})"
+        self.map = (
+            "docs.LastFms.Select(song => new { "
+            "    SongData = new object[] { "
+            "        song.Artist, "
+            "        song.Title, "
+            "        song.Tags, "
+            "        song.TrackId "
+            "    } "
+            "})"
+        )
         # endregion
 
         # region Step_3
-        self._index("CategoryDescription", FieldIndexing.SEARCH)
+        self._index("SongData", FieldIndexing.SEARCH)
+        # endregion
 
 
-class FtsWithStaticIndexSingleField(Example):
+class FtsWithStaticIndexMultipleFields(Example):
     def run(self, run_params: RunParams):
         search_term = run_params.search_term
 
         # region Demo
         with self.document_store_holder.store().open_session() as session:
             # region Step_4
-            categories_with_search_term = list(
-                session.query_index_type(Categories_DescriptionText, Category).where_equals(
-                    "CategoryDescription", search_term
-                )
+            results = list(
+                session.query_index_type(Song_TextData, LastFm).where_equals("SongData", search_term).take(20)
             )
             # endregion
 
         # endregion
 
-        return categories_with_search_term
+        return results

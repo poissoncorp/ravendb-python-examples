@@ -1,9 +1,10 @@
+# region Usings
 from ravendb import (
     PutCompareExchangeValueOperation,
-    CompareExchangeResult,
     GetCompareExchangeValueOperation,
-    CompareExchangeValue,
 )
+
+# endregion
 
 from demo_example import Example
 
@@ -52,9 +53,9 @@ class CreateCompareExchange(Example):
         results = (
             result
             or f"Created a new Compare-Exchange "
-               f"Key: {key}, "
-               f"Value: {current_value}, "
-               f"Value Version: {current_value_version}"
+            f"Key: {key}, "
+            f"Value: {current_value}, "
+            f"Value Version: {current_value_version}"
         )
 
         return results

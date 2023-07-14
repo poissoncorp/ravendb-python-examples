@@ -1,5 +1,5 @@
 # region Usings
-from ravendb import AbstractIndexCreationTask, Facet, RangeFacet, FacetBase
+from ravendb import AbstractIndexCreationTask, Facet, RangeFacet
 
 # endregion
 

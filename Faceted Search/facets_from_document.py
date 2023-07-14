@@ -1,9 +1,10 @@
-from ravendb.documents.queries.facets.definitions import FacetSetup, Facet, RangeFacet
-
 from demo_example import Example, RunParamsBase
 
 # region Usings
 from ravendb import AbstractIndexCreationTask
+from ravendb.documents.queries.facets.definitions import FacetSetup, Facet, RangeFacet
+
+# endregion
 
 from models import Product
 

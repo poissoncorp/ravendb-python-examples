@@ -31,7 +31,10 @@ class Companies_ByLocation(AbstractIndexCreationTask):
         )
         # endregion
         # region Step_4
-        self._spatial("location_coordinates", lambda factory: factory.geography().quad_prefix_tree_index(5))
+        self._spatial(
+            "location_coordinates",
+            lambda factory: factory.geography().quad_prefix_tree_index(5),
+        )
         # endregion
 
 
@@ -40,6 +43,7 @@ class Companies_ByLocation(AbstractIndexCreationTask):
 
 class SpatialIndex(Example):
     def run(self, run_params=None):
+        Companies_ByLocation().execute(self.document_store_holder.store())
         # region Demo
         with self.document_store_holder.store().open_session() as session:
             # region Step_5
@@ -58,7 +62,10 @@ class SpatialIndex(Example):
             # region Step_6
             companies_near_seattle = list(
                 session.query_index_type(Companies_ByLocation, Company)
-                .spatial("location_coordinates", lambda spatial_criteria: spatial_criteria.within(wkt_polygon))
+                .spatial(
+                    "location_coordinates",
+                    lambda spatial_criteria: spatial_criteria.within(wkt_polygon),
+                )
                 .order_by_distance("location_coordinates", seattle_latitude, seattle_longitude)
             )
             # endregion

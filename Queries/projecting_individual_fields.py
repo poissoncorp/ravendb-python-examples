@@ -24,7 +24,11 @@ class ProjectingIndividualFields(Example):
             # endregion
             # region Step_2
             projected_query = projected_query.select_fields_query_data(
-                QueryData(["Name", "Address.City", "Address.Country"], ["company_name", "city", "country"])
+                ProjectingIndividualFields.CompanyDetails,
+                QueryData(
+                    ["Name", "Address.City", "Address.Country"],
+                    ["company_name", "city", "country"],
+                ),
             )
             # endregion
 

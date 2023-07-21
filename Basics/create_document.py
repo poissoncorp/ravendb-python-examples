@@ -5,7 +5,11 @@ from demo_example import Example, RunParamsBase
 
 class RunParams(RunParamsBase):
     def __init__(
-        self, company_name: str = None, company_phone: str = None, contact_name: str = None, contact_title: str = None
+        self,
+        company_name: str = None,
+        company_phone: str = None,
+        contact_name: str = None,
+        contact_title: str = None,
     ):
         self.company_name = company_name
         self.company_phone = company_phone
@@ -22,7 +26,11 @@ class CreateDocument(Example):
 
         # region Demo
         # region Step_1
-        new_company = Company(Name=company_name, Phone=company_phone, Contact=Contact(contact_name, contact_title))
+        new_company = Company(
+            Name=company_name,
+            Phone=company_phone,
+            Contact=Contact(contact_name, contact_title),
+        )
         # endregion
 
         with DocumentStoreHolder.store().open_session() as session:

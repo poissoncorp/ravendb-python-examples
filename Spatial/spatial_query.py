@@ -1,6 +1,9 @@
 # region Usings
 from ravendb import PointField
-from ravendb.documents.indexes.spatial.configuration import SpatialRelation, SpatialUnits
+from ravendb.documents.indexes.spatial.configuration import (
+    SpatialRelation,
+    SpatialUnits,
+)
 
 # endregion
 
@@ -60,7 +63,9 @@ class SpatialQuery(Example):
             # endregion
             query_results = [
                 EmployeeDetails(
-                    f"{item.FirstName} {item.LastName}", item.Address.Location.Longitude, item.Address.Location.Latitude
+                    f"{item.FirstName} {item.LastName}",
+                    item.Address.Location.Longitude,
+                    item.Address.Location.Latitude,
                 )
                 for item in employees_within_circle
             ]

@@ -2,7 +2,13 @@ from demo_example import Example, RunParamsBase
 
 
 class RunParams(RunParamsBase):
-    def __init__(self, document_id: str, attachment: bytes, attachment_name: str, content_type: str):
+    def __init__(
+        self,
+        document_id: str,
+        attachment: bytes,
+        attachment_name: str,
+        content_type: str,
+    ):
         self.document_id = document_id
         self.attachment = attachment
         self.attachment_name = attachment_name

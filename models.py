@@ -1,6 +1,6 @@
 import datetime
 from dataclasses import dataclass
-from typing import Optional, List
+from typing import Optional, List, Dict, Any
 
 
 @dataclass
@@ -73,12 +73,17 @@ class Product:
     Name: Optional[str] = None
     Supplier: Optional[str] = None
     Category: Optional[str] = None
-    QuantityPerUnit: Optional[str] = None
-    PricePerUnit: Optional[str] = None
-    UnitsInStock: Optional[str] = None
-    UnitsOnOrder: Optional[str] = None
+    QuantityPerUnit: Optional[int] = None
+    PricePerUnit: Optional[int] = None
+    UnitsInStock: Optional[int] = None
+    UnitsOnOrder: Optional[int] = None
     Discontinued: Optional[bool] = None
     ReorderLevel: Optional[int] = None
+
+    @classmethod
+    def from_json(cls, json_dict: Dict[str, Any]):
+        json_dict.pop("@metadata")
+        return Product(**json_dict)
 
 
 @dataclass

@@ -28,7 +28,7 @@ class FtsQueryOperators(Example):
             my_query = my_query.search("Notes", f"{term1} {term2}", SearchOperator.AND)
             # endregion
             # region Step_3
-            my_query = my_query.search("Notes", term3, SearchOperator.OR)
+            my_query = my_query.search("Notes", term3)
             # endregion
             # region Step_4
             employees_with_matching_terms = list(my_query)

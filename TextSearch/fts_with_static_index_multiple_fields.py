@@ -46,7 +46,7 @@ class FtsWithStaticIndexMultipleFields(Example):
         with self.document_store_holder.store().open_session() as session:
             # region Step_4
             results = list(
-                session.query_index_type(Song_TextData, LastFm).where_equals("SongData", search_term).take(20)
+                session.query_index_type(Song_TextData, LastFm).search("SongData", search_term).take(20)
             )
             # endregion
 

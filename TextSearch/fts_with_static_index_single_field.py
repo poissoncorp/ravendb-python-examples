@@ -36,7 +36,7 @@ class FtsWithStaticIndexSingleField(Example):
         with self.document_store_holder.store().open_session() as session:
             # region Step_4
             categories_with_search_term = list(
-                session.query_index_type(Categories_DescriptionText, Category).where_equals(
+                session.query_index_type(Categories_DescriptionText, Category).search(
                     "CategoryDescription", search_term
                 )
             )
